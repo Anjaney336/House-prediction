@@ -1,0 +1,27 @@
+experiment_id,dataset_type,dataset_seed,dataset_size,corruption_level,target,model,model_family,validation_strategy,cv_rmse,cv_mae,cv_r2,cv_std,holdout_rmse,holdout_mae,holdout_r2,interval_coverage,interval_width,calibration_rows,train_time,prediction_time,memory_estimate,status,failure_reason,selected
+BENCH-20260819-A6E91F,villas,42,500,clean,sale_price,Linear Regression,Linear,Time-series split,28684407.71742465,18479550.841565777,0.8391998126304155,4352505.533242138,26886293.46799546,20112683.563659415,0.8105914817376633,1.0,188506353.58942664,80.0,1.0081255999975838,57.09059999207966,206610,SUCCESS,,True
+BENCH-20260819-A6E91F,villas,42,500,clean,sale_price,Ridge,Linear,Time-series split,29022102.818326533,18492230.338123437,0.8349728407234035,4652234.8251386415,26911242.70569866,20058075.384669606,0.8102397939366578,1.0,189299578.76351678,80.0,0.9902623999951174,60.11349998880178,206610,SUCCESS,,False
+BENCH-20260819-A6E91F,villas,42,500,clean,sale_price,Gradient Boosting,Boosting,Time-series split,35792148.80633193,20467705.4622052,0.7360507596732454,10738359.84509154,29779224.077916496,21281431.666595474,0.7676383816846416,1.0,211585269.37919545,80.0,1.8858692000067094,69.98010000097565,206610,SUCCESS,,False
+BENCH-20260819-A6E91F,villas,42,500,clean,sale_price,Random Forest,Bagging ensemble,Time-series split,39936890.22948374,23421667.658433598,0.6776327488762554,9953189.791507486,31306723.763752844,21397476.981644124,0.7431894389235236,1.0,245566557.22452372,80.0,3.510605699993903,142.4808000010671,206610,SUCCESS,,False
+BENCH-20260819-A6E91F,villas,42,500,clean,sale_price,Decision Tree,Decision tree,Time-series split,46027809.80008513,28534289.38472222,0.5878753791324508,7581352.829984051,45115438.73562384,29130777.714999996,0.4666798317665085,0.94,210573524.6666667,80.0,1.0320186000026297,60.86689999210648,206610,SUCCESS,,False
+BENCH-20260819-A6E91F,villas,42,500,clean,sale_price,Histogram Gradient Boosting,Boosting,Time-series split,45439224.593279354,23981858.437270194,0.585883825955348,8481228.97144148,31953427.045822643,23192691.90427607,0.732469978501187,0.98,168609816.83551082,80.0,7.932105100000626,107.92490000312682,206610,SUCCESS,,False
+BENCH-20260819-A6E91F,villas,42,500,clean,sale_price,Lasso,Linear,Time-series split,,,,,,,,,,,,,206610,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-A6E91F,villas,42,500,clean,sale_price,Elastic Net,Linear,Time-series split,,,,,,,,,,,,,206610,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-A6E91F,villas,42,500,clean,sale_price,Bayesian Ridge,Linear,Time-series split,,,,,,,,,,,,,206610,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-A6E91F,villas,42,500,clean,sale_price,Huber,Robust linear,Time-series split,,,,,,,,,,,,,206610,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-A6E91F,villas,42,500,clean,sale_price,SGD,Online linear,Time-series split,,,,,,,,,,,,,206610,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-A6E91F,villas,42,500,clean,sale_price,Passive Aggressive,Online linear,Time-series split,,,,,,,,,,,,,206610,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-A6E91F,villas,42,500,clean,sale_price,Quantile Regression,Robust linear,Time-series split,,,,,,,,,,,,,206610,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-A6E91F,villas,42,500,clean,sale_price,Polynomial Ridge,Polynomial,Time-series split,,,,,,,,,,,,,206610,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-A6E91F,villas,42,500,clean,sale_price,Polynomial Lasso,Polynomial,Time-series split,,,,,,,,,,,,,206610,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-A6E91F,villas,42,500,clean,sale_price,K-Nearest Neighbors,Instance-based,Time-series split,,,,,,,,,,,,,206610,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-A6E91F,villas,42,500,clean,sale_price,Linear SVR,Kernel,Time-series split,,,,,,,,,,,,,206610,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-A6E91F,villas,42,500,clean,sale_price,RBF SVR,Kernel,Time-series split,,,,,,,,,,,,,206610,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-A6E91F,villas,42,500,clean,sale_price,Polynomial SVR,Kernel,Time-series split,,,,,,,,,,,,,206610,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-A6E91F,villas,42,500,clean,sale_price,Extra Tree,Decision tree,Time-series split,,,,,,,,,,,,,206610,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-A6E91F,villas,42,500,clean,sale_price,Extra Trees,Bagging ensemble,Time-series split,,,,,,,,,,,,,206610,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-A6E91F,villas,42,500,clean,sale_price,XGBoost,External boosting,Time-series split,,,,,,,,,,,,,206610,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-A6E91F,villas,42,500,clean,sale_price,LightGBM,External boosting,Time-series split,,,,,,,,,,,,,206610,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-A6E91F,villas,42,500,clean,sale_price,CatBoost,External boosting,Time-series split,,,,,,,,,,,,,206610,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-A6E91F,villas,42,500,clean,sale_price,MLP Neural Network,Neural network,Time-series split,,,,,,,,,,,,,206610,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-A6E91F,villas,42,500,clean,sale_price,Gaussian Process,Probabilistic,Time-series split,,,,,,,,,,,,,206610,NOT SELECTED,Not selected in Expert Mode.,False

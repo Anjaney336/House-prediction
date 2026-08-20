@@ -1,0 +1,21 @@
+{
+  "timestamp": "2026-08-19T21:57:15+05:30",
+  "status": "PASS_WITH_LIMITATION",
+  "tests_passed": 47,
+  "tests_failed": 0,
+  "streamlit_routes_checked": 11,
+  "streamlit_exceptions": 0,
+  "compile_status": "PASS",
+  "leakage_tests": "PASS",
+  "schema_contract_tests": "PASS",
+  "model_failure_isolation": "PASS",
+  "optional_dependency_handling": "PASS",
+  "benchmark_matrix": "PASS",
+  "universal_schema_integration": "PASS (two structurally different datasets completed ingest/train/persist/predict)",
+  "api_contract": "PASS (15 OpenAPI paths; auth rejection, protected access, widget and health validated live)",
+  "tenant_isolation_and_retention": "PASS",
+  "streamlit_session_migration": "PASS (direct page navigation safely recreates missing expert-mode state)",
+  "conformal_interval_validation": "PASS (six-seed mean final-test coverage 94%)",
+  "selection_stability": "WARNING (six-seed mean regret 13.64%; maximum 35.15%)",
+  "known_limitation": "Synthetic explainability driver-rank recovery is degraded (Spearman 0.00), and model-selection regret varies materially by seed; both limitations are surfaced in the UI."
+}

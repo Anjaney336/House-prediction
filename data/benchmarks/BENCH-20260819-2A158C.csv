@@ -1,0 +1,27 @@
+experiment_id,dataset_type,dataset_seed,dataset_size,corruption_level,target,model,model_family,validation_strategy,cv_rmse,cv_mae,cv_r2,cv_std,holdout_rmse,holdout_mae,holdout_r2,train_time,prediction_time,memory_estimate,status,failure_reason,selected
+BENCH-20260819-2A158C,mixed_residential,42,500,clean,sale_price,Gradient Boosting,Boosting,Time-series split,15397397.039138744,7470810.888149778,0.7725702806373632,805227.8239198143,11761217.93063021,7074005.205007893,0.8856625189253003,2.038960700010648,55.05760000960436,176968,SUCCESS,,True
+BENCH-20260819-2A158C,mixed_residential,42,500,clean,sale_price,Linear Regression,Linear,Time-series split,15289281.471694967,8481245.389755351,0.789649687359617,3394779.026007701,15160692.024379313,9212460.964344144,0.8100137911316452,0.9752879000006942,56.432800003676675,176968,SUCCESS,,False
+BENCH-20260819-2A158C,mixed_residential,42,500,clean,sale_price,Ridge,Linear,Time-series split,15320533.575059393,8327562.940473132,0.7890407566909982,3489066.949747262,15156457.72385949,9149805.794513237,0.8101199005837945,1.0039962000009837,53.44360000162851,176968,SUCCESS,,False
+BENCH-20260819-2A158C,mixed_residential,42,500,clean,sale_price,Random Forest,Bagging ensemble,Time-series split,15417288.389827332,7853587.092344978,0.7847390061195126,2594962.382590481,15368727.679879239,7902869.0639012195,0.804764020239506,3.565384499990614,153.17449999565724,176968,SUCCESS,,False
+BENCH-20260819-2A158C,mixed_residential,42,500,clean,sale_price,Histogram Gradient Boosting,Boosting,Time-series split,17515877.918844625,9033344.4708742,0.7089243736406674,1979661.706946885,13496992.371560037,7746543.072967426,0.8494232114716667,10.524586600004113,107.91790000803303,176968,SUCCESS,,False
+BENCH-20260819-2A158C,mixed_residential,42,500,clean,sale_price,Decision Tree,Decision tree,Time-series split,19020671.305297393,9756726.509444445,0.6727080690214207,3215170.1552356044,18804077.333706405,9856843.695,0.7077274136438606,0.9343965999869397,51.03349999990314,176968,SUCCESS,,False
+BENCH-20260819-2A158C,mixed_residential,42,500,clean,sale_price,Lasso,Linear,Time-series split,,,,,,,,,,176968,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-2A158C,mixed_residential,42,500,clean,sale_price,Elastic Net,Linear,Time-series split,,,,,,,,,,176968,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-2A158C,mixed_residential,42,500,clean,sale_price,Bayesian Ridge,Linear,Time-series split,,,,,,,,,,176968,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-2A158C,mixed_residential,42,500,clean,sale_price,Huber,Robust linear,Time-series split,,,,,,,,,,176968,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-2A158C,mixed_residential,42,500,clean,sale_price,SGD,Online linear,Time-series split,,,,,,,,,,176968,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-2A158C,mixed_residential,42,500,clean,sale_price,Passive Aggressive,Online linear,Time-series split,,,,,,,,,,176968,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-2A158C,mixed_residential,42,500,clean,sale_price,Quantile Regression,Robust linear,Time-series split,,,,,,,,,,176968,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-2A158C,mixed_residential,42,500,clean,sale_price,Polynomial Ridge,Polynomial,Time-series split,,,,,,,,,,176968,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-2A158C,mixed_residential,42,500,clean,sale_price,Polynomial Lasso,Polynomial,Time-series split,,,,,,,,,,176968,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-2A158C,mixed_residential,42,500,clean,sale_price,K-Nearest Neighbors,Instance-based,Time-series split,,,,,,,,,,176968,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-2A158C,mixed_residential,42,500,clean,sale_price,Linear SVR,Kernel,Time-series split,,,,,,,,,,176968,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-2A158C,mixed_residential,42,500,clean,sale_price,RBF SVR,Kernel,Time-series split,,,,,,,,,,176968,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-2A158C,mixed_residential,42,500,clean,sale_price,Polynomial SVR,Kernel,Time-series split,,,,,,,,,,176968,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-2A158C,mixed_residential,42,500,clean,sale_price,Extra Tree,Decision tree,Time-series split,,,,,,,,,,176968,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-2A158C,mixed_residential,42,500,clean,sale_price,Extra Trees,Bagging ensemble,Time-series split,,,,,,,,,,176968,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-2A158C,mixed_residential,42,500,clean,sale_price,XGBoost,External boosting,Time-series split,,,,,,,,,,176968,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-2A158C,mixed_residential,42,500,clean,sale_price,LightGBM,External boosting,Time-series split,,,,,,,,,,176968,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-2A158C,mixed_residential,42,500,clean,sale_price,CatBoost,External boosting,Time-series split,,,,,,,,,,176968,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-2A158C,mixed_residential,42,500,clean,sale_price,MLP Neural Network,Neural network,Time-series split,,,,,,,,,,176968,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-2A158C,mixed_residential,42,500,clean,sale_price,Gaussian Process,Probabilistic,Time-series split,,,,,,,,,,176968,NOT SELECTED,Not selected in Expert Mode.,False

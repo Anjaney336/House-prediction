@@ -1,0 +1,27 @@
+experiment_id,dataset_type,dataset_seed,dataset_size,corruption_level,target,model,model_family,validation_strategy,cv_rmse,cv_mae,cv_r2,cv_std,holdout_rmse,holdout_mae,holdout_r2,train_time,prediction_time,memory_estimate,status,failure_reason,selected
+BENCH-20260819-C3E698,apartments,42,500,clean,sale_price,Linear Regression,Linear,Time-series split,3713385.13825049,2551589.1795108463,0.6699928243204502,339194.05555077095,3524016.72213599,2769913.951055436,0.6354446867241804,0.19678120000753552,11.252600001171231,230459,SUCCESS,,True
+BENCH-20260819-C3E698,apartments,42,500,clean,sale_price,Ridge,Linear,Time-series split,3713932.0644678404,2537126.2754654083,0.6699007633722126,341966.34636681405,3519342.0990098095,2762858.638719704,0.6364112135857832,0.20619680000527296,11.71579999208916,230459,SUCCESS,,False
+BENCH-20260819-C3E698,apartments,42,500,clean,sale_price,Gradient Boosting,Boosting,Time-series split,4063154.498982472,2884895.681763305,0.6008244743573369,13812.382051220071,3792553.4865731443,2808459.5906742294,0.5777681987627292,0.5055811000056565,11.353300011251122,230459,SUCCESS,,False
+BENCH-20260819-C3E698,apartments,42,500,clean,sale_price,Random Forest,Bagging ensemble,Time-series split,4247219.832704825,3013398.8808596903,0.5642087590481396,82263.33476245536,3767649.5870132744,2874040.432013557,0.5832951843046839,0.9778542999993078,45.964000004460104,230459,SUCCESS,,False
+BENCH-20260819-C3E698,apartments,42,500,clean,sale_price,Histogram Gradient Boosting,Boosting,Time-series split,4512586.300887047,3043303.9048399385,0.5029195404195116,199601.48896399487,3756702.1311420053,2963337.1605417854,0.5857132595021776,0.8420990000013262,24.323799996636808,230459,SUCCESS,,False
+BENCH-20260819-C3E698,apartments,42,500,clean,sale_price,Decision Tree,Decision tree,Time-series split,4964420.535000405,3671912.7527777776,0.4042924294499259,417361.50724730274,5061782.3650858365,3831938.6400000006,0.2478673391017061,0.2041224999993574,11.595899995882064,230459,SUCCESS,,False
+BENCH-20260819-C3E698,apartments,42,500,clean,sale_price,Lasso,Linear,Time-series split,,,,,,,,,,230459,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-C3E698,apartments,42,500,clean,sale_price,Elastic Net,Linear,Time-series split,,,,,,,,,,230459,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-C3E698,apartments,42,500,clean,sale_price,Bayesian Ridge,Linear,Time-series split,,,,,,,,,,230459,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-C3E698,apartments,42,500,clean,sale_price,Huber,Robust linear,Time-series split,,,,,,,,,,230459,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-C3E698,apartments,42,500,clean,sale_price,SGD,Online linear,Time-series split,,,,,,,,,,230459,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-C3E698,apartments,42,500,clean,sale_price,Passive Aggressive,Online linear,Time-series split,,,,,,,,,,230459,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-C3E698,apartments,42,500,clean,sale_price,Quantile Regression,Robust linear,Time-series split,,,,,,,,,,230459,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-C3E698,apartments,42,500,clean,sale_price,Polynomial Ridge,Polynomial,Time-series split,,,,,,,,,,230459,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-C3E698,apartments,42,500,clean,sale_price,Polynomial Lasso,Polynomial,Time-series split,,,,,,,,,,230459,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-C3E698,apartments,42,500,clean,sale_price,K-Nearest Neighbors,Instance-based,Time-series split,,,,,,,,,,230459,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-C3E698,apartments,42,500,clean,sale_price,Linear SVR,Kernel,Time-series split,,,,,,,,,,230459,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-C3E698,apartments,42,500,clean,sale_price,RBF SVR,Kernel,Time-series split,,,,,,,,,,230459,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-C3E698,apartments,42,500,clean,sale_price,Polynomial SVR,Kernel,Time-series split,,,,,,,,,,230459,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-C3E698,apartments,42,500,clean,sale_price,Extra Tree,Decision tree,Time-series split,,,,,,,,,,230459,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-C3E698,apartments,42,500,clean,sale_price,Extra Trees,Bagging ensemble,Time-series split,,,,,,,,,,230459,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-C3E698,apartments,42,500,clean,sale_price,XGBoost,External boosting,Time-series split,,,,,,,,,,230459,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-C3E698,apartments,42,500,clean,sale_price,LightGBM,External boosting,Time-series split,,,,,,,,,,230459,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-C3E698,apartments,42,500,clean,sale_price,CatBoost,External boosting,Time-series split,,,,,,,,,,230459,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-C3E698,apartments,42,500,clean,sale_price,MLP Neural Network,Neural network,Time-series split,,,,,,,,,,230459,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-C3E698,apartments,42,500,clean,sale_price,Gaussian Process,Probabilistic,Time-series split,,,,,,,,,,230459,NOT SELECTED,Not selected in Expert Mode.,False

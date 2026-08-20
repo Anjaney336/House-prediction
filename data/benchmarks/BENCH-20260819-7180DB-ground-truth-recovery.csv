@@ -1,0 +1,7 @@
+True Feature,Expected Importance,Observed Importance,Observed Rank
+area_sqft,1.0,0.06461335046695416,4
+property_type,0.95,0.033663488189661264,5
+locality,0.9,0.00881787223293724,8
+city,0.8,0.38818028126040754,1
+plot_area,0.6,0.028340719509570768,6
+amenities,0.4,0.0,15

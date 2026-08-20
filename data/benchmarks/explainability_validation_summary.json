@@ -1,0 +1,17 @@
+{
+  "experiment_id": "BENCH-20260819-F93D8E",
+  "selected_model": "Linear Regression",
+  "spearman_rank_correlation": 0.7500000000000002,
+  "top_3_driver_overlap": 3,
+  "expected_top_3": [
+    "area_sqft",
+    "city",
+    "locality"
+  ],
+  "observed_top_3": [
+    "area_sqft",
+    "city",
+    "locality"
+  ],
+  "scope": "Synthetic scenario evidence only; not proof of real-world causal explanations."
+}

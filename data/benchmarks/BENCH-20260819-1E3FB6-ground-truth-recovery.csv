@@ -1,0 +1,7 @@
+True Feature,Expected Importance,Observed Importance,Observed Rank
+area,1.0,0.0,10
+location,0.95,0.0953189223938857,2
+city,0.85,0.07442822798148857,3
+furnishing,0.55,0.0,8
+amenities,0.4,0.0,8
+building_age,0.35,0.012091019940038378,6

@@ -1,0 +1,24 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    environment:
+      PRICEPREDICT_API_KEY: ${PRICEPREDICT_API_KEY:?Set PRICEPREDICT_API_KEY}
+      ALLOWED_ORIGINS: ${ALLOWED_ORIGINS:-http://localhost:8501}
+    ports:
+      - "8765:8765"
+    volumes:
+      - platform-data:/app/data/platform
+  admin:
+    build: .
+    ports:
+      - "8501:8501"
+    volumes:
+      - platform-data:/app/data/platform
+    depends_on:
+      api:
+        condition: service_healthy
+
+volumes:
+  platform-data:

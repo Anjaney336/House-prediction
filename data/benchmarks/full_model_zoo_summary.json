@@ -1,0 +1,45 @@
+{
+  "experiment_id": "BENCH-20260819-D15538",
+  "dataset": "synthetic_apartments_seed7",
+  "rows": 200,
+  "status_counts": {
+    "EXCLUDED": 2,
+    "REJECTED": 3,
+    "SUCCESS": 23,
+    "UNAVAILABLE": 1
+  },
+  "selected_model": "Lasso",
+  "automl_regret_percent": 3.1274054477118023,
+  "ensemble_decisions": {
+    "Voting Ensemble": {
+      "accepted": false,
+      "improvement_percent": -1.1312641925568026,
+      "minimum_required_percent": 0.5,
+      "components": [
+        "Lasso",
+        "Linear Regression",
+        "SGD"
+      ]
+    },
+    "Weighted Blend": {
+      "accepted": false,
+      "improvement_percent": -1.131363612083946,
+      "minimum_required_percent": 0.5,
+      "components": [
+        "Lasso",
+        "Linear Regression",
+        "SGD"
+      ]
+    },
+    "Stacking Ensemble": {
+      "accepted": false,
+      "improvement_percent": -5.443816674830799,
+      "minimum_required_percent": 0.5,
+      "components": [
+        "Lasso",
+        "Linear Regression",
+        "SGD"
+      ]
+    }
+  }
+}

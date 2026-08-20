@@ -1,0 +1,27 @@
+experiment_id,dataset_type,dataset_seed,dataset_size,corruption_level,target,model,model_family,validation_strategy,cv_rmse,cv_mae,cv_r2,cv_std,holdout_rmse,holdout_mae,holdout_r2,train_time,prediction_time,memory_estimate,status,failure_reason,selected
+BENCH-20260819-C19393,land,42,500,clean,sale_price,Linear Regression,Linear,Time-series split,18160796.926722523,12200830.31105343,0.5343676716239055,4091596.5006038523,16236515.99991845,10792648.399301825,0.49452361389023525,0.7866365000081714,48.40410000178963,218069,SUCCESS,,True
+BENCH-20260819-C19393,land,42,500,clean,sale_price,Ridge,Linear,Time-series split,18153784.881833356,12156889.547979599,0.5349996368594293,4135678.442014785,16246214.326160155,10764167.248396471,0.49391957556046984,0.7312903999991249,45.165200004703365,218069,SUCCESS,,False
+BENCH-20260819-C19393,land,42,500,clean,sale_price,Gradient Boosting,Boosting,Time-series split,20285669.535523806,13455768.79476889,0.39993614968743935,1994351.4005018598,17309725.400814053,11253242.888050565,0.42549271663835386,1.928461299990886,49.48319999675732,218069,SUCCESS,,False
+BENCH-20260819-C19393,land,42,500,clean,sale_price,Random Forest,Bagging ensemble,Time-series split,20142266.031602647,13174814.479118096,0.4205101549463652,3205321.9131965255,17930176.1119462,11609129.551940715,0.3835692531175917,3.488905699996394,143.50049999484327,218069,SUCCESS,,False
+BENCH-20260819-C19393,land,42,500,clean,sale_price,Histogram Gradient Boosting,Boosting,Time-series split,20725927.905742977,13176834.66516011,0.38744354132561715,3215172.61818079,17494272.161629234,12163195.552870117,0.41317725378652836,10.453207000013208,105.86380001041107,218069,SUCCESS,,False
+BENCH-20260819-C19393,land,42,500,clean,sale_price,Decision Tree,Decision tree,Time-series split,23928073.52722286,15663290.117222222,0.1564294072969725,1663762.5167244251,23507261.58984479,15312600.255000003,-0.05954464914975999,0.7820443999953568,44.28669999470003,218069,SUCCESS,,False
+BENCH-20260819-C19393,land,42,500,clean,sale_price,Lasso,Linear,Time-series split,,,,,,,,,,218069,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-C19393,land,42,500,clean,sale_price,Elastic Net,Linear,Time-series split,,,,,,,,,,218069,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-C19393,land,42,500,clean,sale_price,Bayesian Ridge,Linear,Time-series split,,,,,,,,,,218069,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-C19393,land,42,500,clean,sale_price,Huber,Robust linear,Time-series split,,,,,,,,,,218069,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-C19393,land,42,500,clean,sale_price,SGD,Online linear,Time-series split,,,,,,,,,,218069,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-C19393,land,42,500,clean,sale_price,Passive Aggressive,Online linear,Time-series split,,,,,,,,,,218069,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-C19393,land,42,500,clean,sale_price,Quantile Regression,Robust linear,Time-series split,,,,,,,,,,218069,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-C19393,land,42,500,clean,sale_price,Polynomial Ridge,Polynomial,Time-series split,,,,,,,,,,218069,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-C19393,land,42,500,clean,sale_price,Polynomial Lasso,Polynomial,Time-series split,,,,,,,,,,218069,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-C19393,land,42,500,clean,sale_price,K-Nearest Neighbors,Instance-based,Time-series split,,,,,,,,,,218069,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-C19393,land,42,500,clean,sale_price,Linear SVR,Kernel,Time-series split,,,,,,,,,,218069,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-C19393,land,42,500,clean,sale_price,RBF SVR,Kernel,Time-series split,,,,,,,,,,218069,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-C19393,land,42,500,clean,sale_price,Polynomial SVR,Kernel,Time-series split,,,,,,,,,,218069,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-C19393,land,42,500,clean,sale_price,Extra Tree,Decision tree,Time-series split,,,,,,,,,,218069,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-C19393,land,42,500,clean,sale_price,Extra Trees,Bagging ensemble,Time-series split,,,,,,,,,,218069,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-C19393,land,42,500,clean,sale_price,XGBoost,External boosting,Time-series split,,,,,,,,,,218069,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-C19393,land,42,500,clean,sale_price,LightGBM,External boosting,Time-series split,,,,,,,,,,218069,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-C19393,land,42,500,clean,sale_price,CatBoost,External boosting,Time-series split,,,,,,,,,,218069,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-C19393,land,42,500,clean,sale_price,MLP Neural Network,Neural network,Time-series split,,,,,,,,,,218069,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-C19393,land,42,500,clean,sale_price,Gaussian Process,Probabilistic,Time-series split,,,,,,,,,,218069,NOT SELECTED,Not selected in Expert Mode.,False

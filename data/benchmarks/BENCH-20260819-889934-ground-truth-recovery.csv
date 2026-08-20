@@ -1,0 +1,8 @@
+True Feature,Expected Importance,Observed Importance,Observed Rank
+plot_area,1.0,0.1087078887215048,4
+built_up_area,0.95,0.19682179471574235,3
+location,0.9,0.0736406620739066,5
+city,0.8,0.2927534283205102,1
+luxury_level,0.65,0.04606832712779416,6
+pool,0.4,6.137304429138683e-05,14
+construction_age,0.4,0.006586638802715683,9

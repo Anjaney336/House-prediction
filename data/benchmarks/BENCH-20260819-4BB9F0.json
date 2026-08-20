@@ -1,0 +1,44 @@
+{
+  "experiment_id": "BENCH-20260819-4BB9F0",
+  "timestamp": "2026-08-19T17:52:20.544187+00:00",
+  "dataset_type": "california_block",
+  "target": "median_house_value",
+  "seed": 42,
+  "rows": 20640,
+  "columns": 10,
+  "parameters": {
+    "source": "bundled California Housing"
+  },
+  "ground_truth": {},
+  "features": [
+    "longitude",
+    "latitude",
+    "housing_median_age",
+    "total_rooms",
+    "total_bedrooms",
+    "population",
+    "households",
+    "median_income",
+    "ocean_proximity"
+  ],
+  "corruption_scenario": "clean",
+  "models_tested": [
+    "Histogram Gradient Boosting",
+    "Gradient Boosting",
+    "Random Forest",
+    "Linear Regression",
+    "Ridge",
+    "Decision Tree"
+  ],
+  "validation_strategy": "Shuffled K-fold",
+  "uncertainty_method": "Finite-sample split conformal (95% marginal coverage target)",
+  "calibration_rows": 3303,
+  "auto_ml_regret_percent": 0.0,
+  "total_runtime_seconds": 83.31471900000179,
+  "software_versions": {
+    "python": "3.12.10",
+    "pandas": "2.2.3",
+    "numpy": "2.2.6",
+    "scikit-learn": "1.4.2"
+  }
+}

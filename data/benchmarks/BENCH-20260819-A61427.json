@@ -1,0 +1,61 @@
+{
+  "experiment_id": "BENCH-20260819-A61427",
+  "timestamp": "2026-08-19T15:28:59.925633+00:00",
+  "dataset_type": "commercial",
+  "target": "sale_price",
+  "seed": 42,
+  "rows": 500,
+  "columns": 16,
+  "parameters": {
+    "base_market_level": 1.0,
+    "location_premium": 1.0,
+    "area_coefficient": 1.0,
+    "bedroom_coefficient": 1.0,
+    "age_depreciation": 1.0,
+    "amenity_premium": 1.0,
+    "parking_premium": 1.0,
+    "luxury_premium": 1.0,
+    "market_inflation": 0.055,
+    "noise": 0.08
+  },
+  "ground_truth": {
+    "usable_area": 1.0,
+    "property_type": 0.9,
+    "location": 0.85,
+    "footfall": 0.65,
+    "visibility": 0.5,
+    "lease_status": 0.45
+  },
+  "features": [
+    "property_type",
+    "city",
+    "location",
+    "floor",
+    "parking",
+    "footfall",
+    "visibility",
+    "road_width",
+    "building_age",
+    "lease_status"
+  ],
+  "corruption_scenario": "clean",
+  "models_tested": [
+    "Ridge",
+    "Linear Regression",
+    "Random Forest",
+    "Histogram Gradient Boosting",
+    "Gradient Boosting",
+    "Decision Tree"
+  ],
+  "validation_strategy": "Time-series split",
+  "uncertainty_method": "Finite-sample split conformal (95% marginal coverage target)",
+  "calibration_rows": 80,
+  "auto_ml_regret_percent": 0.032537689371985215,
+  "total_runtime_seconds": 3.4571046000055503,
+  "software_versions": {
+    "python": "3.12.10",
+    "pandas": "2.2.3",
+    "numpy": "2.2.6",
+    "scikit-learn": "1.4.2"
+  }
+}

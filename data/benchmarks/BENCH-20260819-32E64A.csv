@@ -1,0 +1,27 @@
+experiment_id,dataset_type,dataset_seed,dataset_size,corruption_level,target,model,model_family,validation_strategy,cv_rmse,cv_mae,cv_r2,cv_std,holdout_rmse,holdout_mae,holdout_r2,train_time,prediction_time,memory_estimate,status,failure_reason,selected
+BENCH-20260819-32E64A,commercial,42,500,clean,sale_price,Ridge,Linear,Time-series split,23149101.08289851,16435758.45157537,0.24618587053531038,748386.9822396989,34791145.31686286,20249293.776941277,0.13670663558736307,0.7969303999998374,50.58949999511242,188342,SUCCESS,,True
+BENCH-20260819-32E64A,commercial,42,500,clean,sale_price,Linear Regression,Linear,Time-series split,23192149.87899992,16538120.337344153,0.24335171133601527,731643.4566279566,34786088.14398759,20264413.73418856,0.13695759061872748,0.7867149999947287,46.92940000677481,188342,SUCCESS,,False
+BENCH-20260819-32E64A,commercial,42,500,clean,sale_price,Random Forest,Bagging ensemble,Time-series split,24195435.651860375,17430934.233209055,0.17653396719195813,888214.7727136735,35641933.31072816,21103018.7111632,0.0939681651226465,3.646471500003827,145.20420000189915,188342,SUCCESS,,False
+BENCH-20260819-32E64A,commercial,42,500,clean,sale_price,Histogram Gradient Boosting,Boosting,Time-series split,24523288.64749113,17903429.535315413,0.1538426778614044,787062.1254137104,36043015.255465195,21222144.675396804,0.07346211374890377,12.281399200001033,99.68459999072365,188342,SUCCESS,,False
+BENCH-20260819-32E64A,commercial,42,500,clean,sale_price,Gradient Boosting,Boosting,Time-series split,26479150.676602747,18719182.992667016,0.011081865676738264,1097000.0943583199,35594083.605647795,20837971.06182724,0.09639924844942394,1.8395010999956867,54.635699998470955,188342,SUCCESS,,False
+BENCH-20260819-32E64A,commercial,42,500,clean,sale_price,Decision Tree,Decision tree,Time-series split,30564423.52401873,22292994.36222222,-0.31451061875440217,1705768.1480546042,42189569.536132485,28251885.03833333,-0.2694954234498468,3.0176229999924544,183.53120000392664,188342,SUCCESS,,False
+BENCH-20260819-32E64A,commercial,42,500,clean,sale_price,Lasso,Linear,Time-series split,,,,,,,,,,188342,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-32E64A,commercial,42,500,clean,sale_price,Elastic Net,Linear,Time-series split,,,,,,,,,,188342,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-32E64A,commercial,42,500,clean,sale_price,Bayesian Ridge,Linear,Time-series split,,,,,,,,,,188342,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-32E64A,commercial,42,500,clean,sale_price,Huber,Robust linear,Time-series split,,,,,,,,,,188342,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-32E64A,commercial,42,500,clean,sale_price,SGD,Online linear,Time-series split,,,,,,,,,,188342,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-32E64A,commercial,42,500,clean,sale_price,Passive Aggressive,Online linear,Time-series split,,,,,,,,,,188342,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-32E64A,commercial,42,500,clean,sale_price,Quantile Regression,Robust linear,Time-series split,,,,,,,,,,188342,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-32E64A,commercial,42,500,clean,sale_price,Polynomial Ridge,Polynomial,Time-series split,,,,,,,,,,188342,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-32E64A,commercial,42,500,clean,sale_price,Polynomial Lasso,Polynomial,Time-series split,,,,,,,,,,188342,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-32E64A,commercial,42,500,clean,sale_price,K-Nearest Neighbors,Instance-based,Time-series split,,,,,,,,,,188342,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-32E64A,commercial,42,500,clean,sale_price,Linear SVR,Kernel,Time-series split,,,,,,,,,,188342,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-32E64A,commercial,42,500,clean,sale_price,RBF SVR,Kernel,Time-series split,,,,,,,,,,188342,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-32E64A,commercial,42,500,clean,sale_price,Polynomial SVR,Kernel,Time-series split,,,,,,,,,,188342,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-32E64A,commercial,42,500,clean,sale_price,Extra Tree,Decision tree,Time-series split,,,,,,,,,,188342,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-32E64A,commercial,42,500,clean,sale_price,Extra Trees,Bagging ensemble,Time-series split,,,,,,,,,,188342,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-32E64A,commercial,42,500,clean,sale_price,XGBoost,External boosting,Time-series split,,,,,,,,,,188342,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-32E64A,commercial,42,500,clean,sale_price,LightGBM,External boosting,Time-series split,,,,,,,,,,188342,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-32E64A,commercial,42,500,clean,sale_price,CatBoost,External boosting,Time-series split,,,,,,,,,,188342,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-32E64A,commercial,42,500,clean,sale_price,MLP Neural Network,Neural network,Time-series split,,,,,,,,,,188342,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-32E64A,commercial,42,500,clean,sale_price,Gaussian Process,Probabilistic,Time-series split,,,,,,,,,,188342,NOT SELECTED,Not selected in Expert Mode.,False

@@ -1,0 +1,7 @@
+True Feature,Expected Importance,Observed Importance,Observed Rank
+plot_area,1.0,0.1530172369053261,3
+zoning,0.95,0.04569399537553682,4
+location,0.85,0.00727200944001301,8
+development_status,0.7,0.013820178028507862,7
+distance_to_city,0.55,0.022276292247387867,5
+road_width,0.4,0.00018937893417783863,12

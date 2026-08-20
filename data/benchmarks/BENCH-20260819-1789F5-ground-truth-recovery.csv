@@ -1,0 +1,7 @@
+True Feature,Expected Importance,Observed Importance,Observed Rank
+usable_area,1.0,0.16817689452972884,3
+property_type,0.9,0.01536703782492663,5
+location,0.85,0.00985635267795385,6
+footfall,0.65,0.0002602850625098268,11
+visibility,0.5,0.0,13
+lease_status,0.45,0.0020398714527351176,8

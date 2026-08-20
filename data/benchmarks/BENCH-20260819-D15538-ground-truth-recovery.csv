@@ -1,0 +1,8 @@
+True Feature,Expected Importance,Observed Importance,Observed Rank
+area_sqft,1.0,0.029164016818976225,4
+locality,0.95,0.015479702934408285,5
+city,0.85,0.4174902327084754,1
+building_age,0.55,0.004190297001324462,6
+amenities,0.5,0.0,13
+distance_to_center,0.45,0.0018413934730172861,10
+parking,0.3,0.0007288348882156597,11

@@ -1,0 +1,14 @@
+[
+  {"risk":"Data scarcity","severity":"HIGH","control":"Minimum rows, target variance, and valuation-suitability gates","status":"CONTROLLED"},
+  {"risk":"Geographic sparsity","severity":"HIGH","control":"Geographic validation and OOD locality warnings","status":"MONITORED"},
+  {"risk":"Temporal drift","severity":"HIGH","control":"Chronological validation, drift checks, scheduled retraining","status":"MONITORED"},
+  {"risk":"Market regime change","severity":"HIGH","control":"Error-drift alert and candidate shadowing","status":"MONITORED"},
+  {"risk":"Out-of-distribution properties","severity":"HIGH","control":"Range, category, property-type and combination rejection","status":"CONTROLLED"},
+  {"risk":"Input quality","severity":"MEDIUM","control":"Contract validation and fold-fitted imputation","status":"CONTROLLED"},
+  {"risk":"Model-selection instability","severity":"HIGH","control":"Multi-seed audit and selection warning","status":"OPEN"},
+  {"risk":"Explainability uncertainty","severity":"HIGH","control":"Synthetic driver recovery validation and degraded status","status":"OPEN"},
+  {"risk":"Infrastructure scalability","severity":"HIGH","control":"Pilot-only SQL disclosed; PostgreSQL/queue/Redis roadmap","status":"OPEN"},
+  {"risk":"API abuse","severity":"MEDIUM","control":"Authentication, CORS and endpoint rate limiting","status":"CONTROLLED"},
+  {"risk":"Model artifact security","severity":"HIGH","control":"Only server-created trusted artifacts are loaded","status":"CONTROLLED"},
+  {"risk":"Data privacy","severity":"HIGH","control":"Tenant isolation, consent, deletion and expiry purge","status":"CONTROLLED"}
+]

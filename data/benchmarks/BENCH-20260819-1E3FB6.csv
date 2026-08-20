@@ -1,0 +1,27 @@
+experiment_id,dataset_type,dataset_seed,dataset_size,corruption_level,target,model,model_family,validation_strategy,cv_rmse,cv_mae,cv_r2,cv_std,holdout_rmse,holdout_mae,holdout_r2,interval_coverage,interval_width,calibration_rows,train_time,prediction_time,memory_estimate,status,failure_reason,selected
+BENCH-20260819-1E3FB6,rentals,42,500,clean,monthly_rent,Linear Regression,Linear,Time-series split,8478.488965625103,5953.392004192676,0.8498204354896002,1417.663657975881,17741.753343060478,10810.792880036588,0.6914835697112306,0.86,41461.78114976722,80.0,0.20156280000810511,8.034999991650693,186380,SUCCESS,,True
+BENCH-20260819-1E3FB6,rentals,42,500,clean,monthly_rent,Ridge,Linear,Time-series split,8468.797708935339,5901.994369621178,0.8502744586006138,1440.2501059545214,17785.698554195686,10799.213974877226,0.6899533251700002,0.86,41492.30337000065,80.0,0.15646820000256412,12.503699996159412,186380,SUCCESS,,False
+BENCH-20260819-1E3FB6,rentals,42,500,clean,monthly_rent,Gradient Boosting,Boosting,Time-series split,9157.74630062915,6344.182194743816,0.8200064235479257,1009.1824046080234,17882.963898291273,10563.093271398975,0.6865529238592342,0.9,54961.5192290853,80.0,0.3932364999927813,9.622700003092177,186380,SUCCESS,,False
+BENCH-20260819-1E3FB6,rentals,42,500,clean,monthly_rent,Random Forest,Bagging ensemble,Time-series split,10722.617517229985,7264.054027184044,0.755635264771675,1276.7636057798265,18265.85919430214,11046.379002592244,0.6729866863298868,0.95,70109.17454081625,80.0,1.075441500011948,33.866600002511404,186380,SUCCESS,,False
+BENCH-20260819-1E3FB6,rentals,42,500,clean,monthly_rent,Decision Tree,Decision tree,Time-series split,12341.498738709814,8779.858333333335,0.6559521864690695,1350.438004825751,18848.587689252592,11493.766666666665,0.6517887066576586,0.95,75487.33333333333,80.0,0.26177839998854324,16.96779999474529,186380,SUCCESS,,False
+BENCH-20260819-1E3FB6,rentals,42,500,clean,monthly_rent,Histogram Gradient Boosting,Boosting,Time-series split,11319.896355417111,7505.235209191441,0.7209311858199269,2481.470123188793,20801.205249474628,11669.43625609339,0.5759059083629519,0.88,49603.40513868704,80.0,0.570079800003441,11.391099993488751,186380,SUCCESS,,False
+BENCH-20260819-1E3FB6,rentals,42,500,clean,monthly_rent,Lasso,Linear,Time-series split,,,,,,,,,,,,,186380,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-1E3FB6,rentals,42,500,clean,monthly_rent,Elastic Net,Linear,Time-series split,,,,,,,,,,,,,186380,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-1E3FB6,rentals,42,500,clean,monthly_rent,Bayesian Ridge,Linear,Time-series split,,,,,,,,,,,,,186380,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-1E3FB6,rentals,42,500,clean,monthly_rent,Huber,Robust linear,Time-series split,,,,,,,,,,,,,186380,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-1E3FB6,rentals,42,500,clean,monthly_rent,SGD,Online linear,Time-series split,,,,,,,,,,,,,186380,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-1E3FB6,rentals,42,500,clean,monthly_rent,Passive Aggressive,Online linear,Time-series split,,,,,,,,,,,,,186380,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-1E3FB6,rentals,42,500,clean,monthly_rent,Quantile Regression,Robust linear,Time-series split,,,,,,,,,,,,,186380,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-1E3FB6,rentals,42,500,clean,monthly_rent,Polynomial Ridge,Polynomial,Time-series split,,,,,,,,,,,,,186380,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-1E3FB6,rentals,42,500,clean,monthly_rent,Polynomial Lasso,Polynomial,Time-series split,,,,,,,,,,,,,186380,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-1E3FB6,rentals,42,500,clean,monthly_rent,K-Nearest Neighbors,Instance-based,Time-series split,,,,,,,,,,,,,186380,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-1E3FB6,rentals,42,500,clean,monthly_rent,Linear SVR,Kernel,Time-series split,,,,,,,,,,,,,186380,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-1E3FB6,rentals,42,500,clean,monthly_rent,RBF SVR,Kernel,Time-series split,,,,,,,,,,,,,186380,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-1E3FB6,rentals,42,500,clean,monthly_rent,Polynomial SVR,Kernel,Time-series split,,,,,,,,,,,,,186380,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-1E3FB6,rentals,42,500,clean,monthly_rent,Extra Tree,Decision tree,Time-series split,,,,,,,,,,,,,186380,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-1E3FB6,rentals,42,500,clean,monthly_rent,Extra Trees,Bagging ensemble,Time-series split,,,,,,,,,,,,,186380,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-1E3FB6,rentals,42,500,clean,monthly_rent,XGBoost,External boosting,Time-series split,,,,,,,,,,,,,186380,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-1E3FB6,rentals,42,500,clean,monthly_rent,LightGBM,External boosting,Time-series split,,,,,,,,,,,,,186380,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-1E3FB6,rentals,42,500,clean,monthly_rent,CatBoost,External boosting,Time-series split,,,,,,,,,,,,,186380,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-1E3FB6,rentals,42,500,clean,monthly_rent,MLP Neural Network,Neural network,Time-series split,,,,,,,,,,,,,186380,NOT SELECTED,Not selected in Expert Mode.,False
+BENCH-20260819-1E3FB6,rentals,42,500,clean,monthly_rent,Gaussian Process,Probabilistic,Time-series split,,,,,,,,,,,,,186380,NOT SELECTED,Not selected in Expert Mode.,False
