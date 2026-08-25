@@ -1,137 +1,59 @@
-# PricePredict AI
+# House Price Prediction
 
-PricePredict AI is a production-minded Real Estate Valuation & Predictive Intelligence platform built with FastAPI, Streamlit, and scikit-learn. It detects whether uploaded data actually represents property observations, distinguishes individual-property data from geographic aggregates, trains leakage-safe regression pipelines, and creates valuation inputs from the saved model schema—not from hard-coded demo fields. Streamlit is the internal analyst console; website visitors use a small script-tag widget backed by the API.
+Supervised regression and real-estate valuation platform for predicting residential property prices from structural, location, quality, and market-context features. The project goes beyond a notebook: it includes dataset validation, feature engineering, leakage-safe model training, model comparison, cross-validated evaluation, Streamlit analysis workflows, a FastAPI prediction layer, and reproducible benchmark evidence.
 
-The repository retains the original California housing notebook as a reproducible learning artifact while turning the idea into a tested application with clear separation between UI, data processing, and machine learning.
+**Best verified benchmark model:** `Histogram Gradient Boosting` - CV RMSE `48,749` | holdout RMSE `48,726` | holdout R2 `0.819` on the full California Housing benchmark. The held-out test set is scored once; cross-validation is used for model screening and selection.
 
-## Screenshots
+---
+
+## Results
+
+| Evaluation scope | Best / selected model | CV RMSE | Test RMSE | Test MAE | Test R2 |
+| --- | --- | ---: | ---: | ---: | ---: |
+| California Housing full benchmark | Histogram Gradient Boosting | 48,749 | 48,726 | Reported in app run | 0.819 |
+| Noida synthetic listings QA run | Ridge | INR 4.01M | INR 11.29M | INR 2.80M | 0.500 |
+| Full 200-row model-zoo benchmark | Lasso selected; ensembles rejected | See benchmark files | See benchmark files | See benchmark files | See benchmark files |
+
+> Metrics are generated through cross-validated model screening with a final holdout audit. Synthetic validation tests software behavior and methodology; it is not real-market appraisal proof.
 
 ![PricePredict AI landing page](docs/assets/pricepredict-home.png)
 
 ![CSV profiling and schema selection](docs/assets/upload-profile.png)
 
-## Product workflow
+---
 
-```mermaid
-flowchart LR
-    A[Data] --> B[Dataset Check]
-    B --> C[Data Preparation]
-    C --> D[Quick / Balanced / Advanced Model Build]
-    D --> E[Valuation]
-    E --> F[Insights]
-    F --> G[Reports]
-```
-
-### Capabilities
-
-- CSV validation, schema inference, missingness and cardinality profiling
-- Real-estate vs generic-regression domain detection with transparent confidence scores
-- Property ontology mapping for residential, rental, land, and commercial datasets
-- Prediction-granularity classification, including honest California block-level labeling
-- Ranked valuation-target detection with explicit currency selection
-- Data Quality and Valuation Suitability scores with visible component metrics
-- Automatic target-leakage, identifier, duplicate, invalid-value, and outlier warnings
-- Per-column imputation, optional training-only IQR capping, and scaling
-- A centralized 25+ model catalog spanning linear, robust, polynomial, kernel, tree, boosting, neural, probabilistic, and ensemble regression
-- Dataset-aware eligibility with visible exclusions for unsuitable scale, dimensionality, run mode, or missing optional packages
-- User Mode by default with Quick, Balanced, and Advanced model builds; Expert Mode reveals model science and engineering controls
-- Two-stage AutoML: consistent cross-validated screening followed by focused randomized optimization of top finalists
-- Automatic shuffled, grouped-property, chronological, or explicit geographic validation with matching holdout design
-- Configurable composite ranking across predictive performance, fold stability, model simplicity, and generalization, including sensitivity analysis
-- R², RMSE, MAE, median absolute error, conditional MAPE, explained variance, timing, residuals, and fold-level stability diagnostics
-- Optional XGBoost, LightGBM, and CatBoost integration with graceful package-availability reporting
-- Voting, cross-validated stacking, and CV-weighted blends accepted only when validation improvement clears an evidence threshold
-- Model-native or permutation feature importance and local SHAP explanations
-- Persisted model schema contracts with feature order, types, labels, groups, vocabularies, ranges, and imputation metadata
-- Dynamically grouped valuation forms with explicit unknown/imputed inputs
-- Model-based uncertainty ranges, heuristic Model Confidence Scores, and similar historical records when justified
-- Contract-validated batch prediction with valid/invalid row counts and schema warnings
-- Versioned model IDs, model cards, trusted local registry, and downloadable valuation reports
-- Session-persistent multi-page workflow and bundled California housing demo
-- Six causally structured synthetic markets with deterministic seeds, configurable market assumptions, and downloadable manifests
-- MCAR/MAR/feature-dependent missingness, valid/impossible outliers, duplicates, leakage, and distribution-shift scenarios
-- Persisted benchmark tables with AutoML regret, runtime, failures, ground-truth driver recovery, and robustness evidence
-- Structured BLOCKER/HIGH/MEDIUM/LOW fault findings with recommended recovery actions
-- Tenant-isolated durable dataset, schema-contract, model-card, prediction, job, and consented-lead records
-- FastAPI endpoints for ingestion, training, model/schema discovery, publication, single/batch prediction, customer self-service, and deletion
-- API-key protected operator workflows, fixed-window abuse controls, configurable CORS, and structured request logs
-- Embeddable JavaScript widget whose fields reshape from the active model contract without a frontend redeploy
-- Data-driven locality alias reference, explicit customer retention, and scheduled retraining/drift hooks
-
-## Architecture
+## Workflow
 
 ```text
-app/                    Streamlit pages and reusable UI components
-backend/                FastAPI delivery layer and embeddable JavaScript widget
-src/data/               CSV loading, profiling, and preprocessing
-src/domain/             Domain detection, property ontology, target intelligence
-src/features/           Feature recommendations and engineering helpers
-src/models/             Training, registry, explainability, and prediction
-src/benchmark/          Synthetic markets, corruptions, fault diagnostics, benchmark persistence
-src/validation/         Persisted model contracts and prediction validation
-src/platform/           Tenant isolation, durable SQL records, ingestion/training services, retention and retraining
-src/reports/            Downloadable valuation reports
-src/utils/              Application configuration and schema validation
-data/sample_datasets/   Bundled demonstration dataset
-data/benchmarks/         Reproducible benchmark evidence and manifests
-scripts/                 Validation-matrix, robustness, shift, and explainability runners
-models/                 Session-keyed fitted pipeline artifacts
-tests/                  Unit and integration tests
+data/sample_datasets/housing_sample.csv
+        |
+        v
+[1] Dataset intelligence       -> src/domain/, src/data/
+        |   real-estate detection, target discovery, granularity, schema profiling
+        v
+[2] Cleaning and validation    -> src/data/, src/validation/
+        |   missing values, leakage checks, identifiers, invalid values, outliers
+        v
+[3] Feature engineering        -> src/features/, sklearn ColumnTransformer
+        |   numeric/categorical handling, datetime promotion, scaling, encoding
+        v
+[4] Model training             -> src/models/trainer.py
+        |   baseline, regularised, robust, tree, boosting, neural, ensemble candidates
+        v
+[5] Evaluation and reporting   -> src/models/, src/reports/, app/
+            RMSE, MAE, R2, residuals, uncertainty, explainability, model cards
 ```
 
-All imputers, encoders, outlier bounds, and scalers are fitted inside `sklearn.Pipeline` / `ColumnTransformer` objects. Cross-validation therefore learns preprocessing only from each training fold and avoids leakage into validation or holdout data.
-
-## Dataset intelligence and operating modes
-
-The application scores semantic signals from column names, data types, cardinality, feature co-occurrence, location fields, property characteristics, and valuation targets.
-
-- **Real Estate Intelligence** activates property-aware language, asset classification, suitability scoring, grouped valuation inputs, and comparable analysis where the granularity supports it.
-- **Generic Regression Mode** remains available for unrelated tabular data, but deliberately disables property valuation claims.
-- A property dataset without a recognized historical price/value/rent target is placed in analytics-only state until the user supplies an appropriate target dataset or switches modes.
-
-Raw columns are never renamed or overwritten. The application maintains a traceable chain: raw schema → normalized ontology roles → selected model schema → persisted prediction contract.
-
-## Supported real-estate patterns
-
-- Residential apartments, flats, villas, houses, studios, and listings
-- Land parcels, plots, zoning/frontage datasets
-- Commercial offices, retail, warehouses, and lease datasets
-- Rental units and monthly/annual rent targets
-- Geographic or census/block aggregates, clearly labeled as area-level estimates
-
-Columns may be absent. The model trains only on selected fields that actually exist and never fabricates parking, rooms, coordinates, age, amenities, or other unavailable property concepts.
-
-## Target detection and leakage prevention
-
-Potential targets such as sale price, listing price, transaction value, rent, price per area, and median housing value are ranked and explained. Suspicious price-derived inputs, near-perfect target proxies, post-sale fields, and entity IDs are flagged before training. Model selection uses a documented composite of cross-validated predictive performance (60%), fold stability (20%), simplicity (10%), and generalization (10%). The holdout set remains a diagnostic and is not used to tune hyperparameters.
-
-## Prediction contract
-
-Every trained artifact stores feature names/order, original data types, ontology roles, UI groups and labels, numeric ranges, categorical vocabularies, missingness and imputation behavior, target/currency, domain, asset type, granularity, metrics, quality scores, limitations, and training configuration. Single and batch prediction validate against this contract. Missing inputs stay missing and are handled by the fitted imputer; arbitrary zero defaults are never inserted.
-
-## Uncertainty and limitations
-
-The displayed 95% range uses finite-sample split conformal calibration on data that is disjoint from both model training and the final test set. It targets marginal coverage under exchangeability; it does not guarantee coverage for every location, property type, subgroup, or shifted future market. The Model Confidence Score combines predictive accuracy, fold stability, generalization, dataset quality, input completeness, and comparable coverage; it is a transparent heuristic, not a probability. Model performance and data reliability are displayed separately.
-
-PricePredict AI is historical and data-dependent. It is not a legal valuation, a guaranteed market appraisal, or a substitute for a licensed appraiser where one is required. Geographic aggregate datasets cannot justify exact individual-property claims.
-
-## Run locally
-
-Python 3.11 or newer is required.
+Run the Streamlit app:
 
 ```bash
-python -m venv .venv
-# Windows
-.venv\Scripts\activate
+git clone https://github.com/Anjaney336/House-prediction.git
+cd House-prediction
 pip install -r requirements.txt
 streamlit run app/main.py
 ```
 
-Open `http://localhost:8501`. The default lifecycle is **Data → Data Preparation → Model → Valuation → Insights → Reports**. Enable **Expert Mode** for the synthetic benchmark, model science, system health, and platform API views.
-
-### Run the API and widget
-
-Set a strong operator secret; the API intentionally returns `503` for protected routes when no key is configured.
+Run the API:
 
 ```powershell
 $env:PRICEPREDICT_API_KEY="replace-with-a-long-random-secret"
@@ -139,30 +61,97 @@ $env:ALLOWED_ORIGINS="https://www.example-real-estate-site.com"
 python -m uvicorn backend.api:app --host 127.0.0.1 --port 8765
 ```
 
-API documentation is available at `http://127.0.0.1:8765/docs`. Uploads use the raw CSV/XLSX request body and a `filename` query parameter, avoiding multipart parser coupling. An operator confirms the target explicitly in `/train`; the service never silently chooses among multiple price-like targets.
-
-Embed a published model on an existing website:
-
-```html
-<div id="pricepredict-widget"></div>
-<script src="https://valuation.example.com/widget.js"
-        data-api="https://valuation.example.com"
-        data-tenant="operator"
-        data-model="PP-RES-..."
-        data-mount="pricepredict-widget"></script>
-```
-
-The widget fetches `/schema`, builds the form from the deployed prediction contract, and displays the point estimate, calibrated range, non-probabilistic confidence heuristic, model version, granularity caveat, and legal disclaimer.
-
-Customer comparable uploads use `/customer/datasets`, `/customer/train`, and `/customer/predict` with a strong `X-Session-Token`. The server derives the tenant boundary from that token; customer data and artifacts are retained for 24 hours unless deleted earlier. Contact data is accepted only with explicit consent and a disclosed 1–365 day retention period. Run `python -m scripts.run_scheduled_retraining --tenant TENANT --execute` from a scheduler to enforce expired-record cleanup and retraining cadence.
-
-## Run tests
+Run tests:
 
 ```bash
 python -m pytest -q
 ```
 
-## Reproduce engineering evidence
+---
+
+## Dataset
+
+**Primary source:** California Housing dataset, bundled as `houseprediction.csv` and `data/sample_datasets/housing_sample.csv`  
+**Shape:** `20,640` rows x `9` columns  
+**Target:** `MedHouseVal`, median house value for a California census block group  
+**Committed?** Yes, the sample dataset is committed for reproducible local demos.
+
+The repository also includes small synthetic/property samples to test residential listings, missing-target cases, unrelated schemas, and API/customer workflows.
+
+### Key features
+
+| Column | Type | Description |
+| --- | --- | --- |
+| `MedInc` | numeric | Median income in the block group; strongest California benchmark signal. |
+| `HouseAge` | numeric | Median age of houses in the block group. |
+| `AveRooms` | numeric | Average number of rooms per household. |
+| `AveBedrms` | numeric | Average number of bedrooms per household. |
+| `Population` | numeric | Block-group population. |
+| `AveOccup` | numeric | Average household occupancy. |
+| `Latitude` / `Longitude` | numeric | Geographic position used for location-sensitive valuation. |
+| `price_inr` | numeric | Target used only in the Noida synthetic QA dataset. |
+| `property_type`, `city`, `locality` | categorical | Property descriptors used in individual-property synthetic/listing workflows. |
+
+Full column notes are in `docs/data_dictionary.md`.
+
+### Preprocessing decisions
+
+- Missing values: numeric features are imputed inside fitted scikit-learn pipelines; categorical features use fitted categorical handling rather than hard-coded defaults.
+- Outliers: optional training-only IQR capping is available and learned without validation leakage.
+- Target handling: rows with missing targets are removed; log-target training is supported through `TransformedTargetRegressor` where appropriate.
+- Leakage prevention: target-derived columns, identifiers, post-sale fields, near-perfect proxies, and incompatible schema fields are flagged before training.
+- Validation: shuffled, grouped-property, chronological, or geographic validation is selected based on detected dataset structure.
+
+---
+
+## Model Coverage
+
+| Model family | Implementation status | Notes |
+| --- | --- | --- |
+| Linear Regression baseline | Supported | Used for baseline comparison and sanity checks. |
+| Ridge / Lasso / Elastic Net | Supported | Regularised models are useful for stable, interpretable tabular baselines. |
+| Random Forest / Extra Trees | Supported | Nonlinear tree ensembles for mixed feature behavior. |
+| Gradient Boosting / Histogram Gradient Boosting | Supported | Best verified California benchmark result. |
+| XGBoost / CatBoost | Optional | Used when packages are available and preflight checks pass. |
+| LightGBM | Safely gated | Marked unavailable when the local native binary is unstable. |
+| Voting / stacking / weighted blends | Supported but evidence-gated | Rejected when validation RMSE worsens. |
+
+---
+
+## Architecture
+
+```text
+app/                    Streamlit analyst console and workflow pages
+backend/                FastAPI delivery layer and embeddable JavaScript widget
+src/data/               CSV loading, profiling, schema checks, preprocessing
+src/domain/             Real-estate detection, ontology, target/currency intelligence
+src/features/           Feature recommendations and engineering helpers
+src/models/             Training, model catalog, registry, explainability, prediction
+src/benchmark/          Synthetic markets, robustness tests, benchmark persistence
+src/validation/         Model contracts and prediction validation
+src/platform/           Tenant isolation, durable records, lifecycle services
+src/reports/            Downloadable valuation reports
+data/sample_datasets/   Demo and QA datasets
+data/benchmarks/        Reproducible benchmark evidence
+scripts/                Validation, robustness, shift, and explainability runners
+tests/                  Unit and integration tests
+```
+
+All imputers, encoders, outlier bounds, and scalers are fitted inside `sklearn.Pipeline` or `ColumnTransformer` objects. Cross-validation therefore learns preprocessing only from each training fold and avoids leakage into validation or holdout data.
+
+---
+
+## Current Benchmark Evidence
+
+- Full California Housing benchmark: Histogram Gradient Boosting, CV RMSE `48,749`, holdout RMSE approximately `48,726`, holdout R2 `0.819`.
+- Noida synthetic listings QA run: Ridge, CV RMSE about INR `4.01M`, test RMSE INR `11.29M`, test MAE INR `2.80M`, test R2 `0.500`, and 92.5% empirical 95% interval coverage.
+- Six-seed mixed-residential audit: AutoML holdout regret `0.28%` to `25.26%`, mean `10.24%`, median `8.55%`.
+- Controlled 20% target-market shift increased matched-row RMSE by about `45%` to `81%`, depending on market type.
+- Explainability recovery achieved rank correlation `0.75` and recovered all three expected top drivers after continuous measurements were restored to feature selection.
+- Full model-zoo benchmark produced 23 successful models, two dimensionality exclusions, one safely unavailable LightGBM binary, and rejected ensembles when they degraded validation RMSE.
+- Final automated verification: `72 passed`; all 11 Streamlit routes rendered without uncaught exceptions.
+
+Reproduce evidence:
 
 ```bash
 python -m scripts.run_validation_matrix
@@ -173,16 +162,22 @@ python -m scripts.run_multiseed_selection_validation
 python -m scripts.run_full_model_zoo_benchmark
 ```
 
-These commands write CSV/JSON evidence under `data/benchmarks/`. Synthetic validation tests software and methodology under controlled assumptions; it does not establish real-world appraisal accuracy.
+---
 
-## Current benchmark evidence
+## Platform Features
 
-- Full California Housing (20,640 rows): Histogram Gradient Boosting, holdout R² `0.819`, holdout RMSE approximately `48,726`.
-- A six-seed mixed-residential audit measured AutoML holdout regret of `0.28%`–`25.26%` (mean `10.24%`, median `8.55%`). Holdout is audit-only and this variance is explicitly reported as a model-selection limitation.
-- A controlled 20% target-market shift increased matched-row RMSE by approximately `45%`–`81%`, depending on market type. Exact routing and OOD checks therefore remain mandatory.
-- Explainability recovery achieved rank correlation `0.75` and recovered all three expected top drivers after continuous measurements were restored to feature selection. Synthetic recovery is not causal proof.
-- The 200-row full-zoo benchmark produced 23 successful models, two dimensionality exclusions, and one safely unavailable LightGBM binary detected by isolated realistic preflight. Voting, weighted blending, and stacking were rejected because they degraded validation RMSE. Full-zoo AutoML regret was `3.13%`.
-- Final automated verification: `72 passed`; all 11 Streamlit routes rendered without uncaught exceptions.
+- Real-estate vs generic-regression dataset detection with transparent confidence scores.
+- Residential, rental, land, and commercial property ontology support.
+- Ranked target detection for sale price, listing price, rent, transaction value, and median housing value.
+- Data Quality and Valuation Suitability scores with component-level diagnostics.
+- Leakage, identifier, duplicate, invalid-value, and outlier warnings before training.
+- User Mode for quick workflows and Expert Mode for model science, benchmarking, and platform diagnostics.
+- Model cards, schema contracts, prediction validation, uncertainty ranges, and similar-record context.
+- FastAPI endpoints for ingestion, training, model/schema discovery, publication, prediction, and deletion.
+- API-key protected operator routes, configurable CORS, and structured request logs.
+- Embeddable JavaScript widget that builds its input form from the active model contract.
+
+---
 
 ## Docker
 
@@ -191,24 +186,27 @@ docker build -t price-predict-ai .
 docker run --rm -p 8501:8501 price-predict-ai
 ```
 
-To run the API and admin console together with shared durable storage:
+To run the API and admin console together:
 
 ```bash
 cp .env.example .env
 docker compose up --build
 ```
 
-The bundled durable SQL store is appropriate for a single-node capstone/pilot. Before multi-instance internet deployment, migrate the persistence adapter to managed PostgreSQL and object storage, and replace the in-process rate limiter with a shared Redis-backed limiter.
+---
 
-## Modeling notes
+## Limitations
 
-- The target is never included in preprocessing features.
-- Rows with missing targets are removed; feature missingness is handled in the fitted pipeline.
-- A log-target option uses `TransformedTargetRegressor`, so displayed predictions remain on the original scale.
-- The 95% range is split-conformal calibrated; six-seed final-test coverage averaged `94%`. This is a marginal, exchangeability-based result rather than a conditional or shifted-market guarantee.
-- High-cardinality text is flagged during profiling. Users can intentionally retain it, with unseen categories safely ignored by one-hot encoding.
+- California Housing is a census/block-level dataset and must not be presented as exact individual-property appraisal evidence.
+- The Noida listing dataset is synthetic QA evidence, so publication as a real production valuation model is intentionally blocked.
+- Random holdouts do not fully model temporal market drift; chronological or geographic validation is preferred when data supports it.
+- Split-conformal uncertainty gives marginal coverage under exchangeability, not guaranteed coverage for every location, property type, or future shifted market.
 - Saved joblib files must only be loaded from trusted sources because pickle-family formats can execute code during deserialization.
+- Before multi-instance internet deployment, replace local durable storage with managed PostgreSQL/object storage and use a shared rate limiter.
 
-## Original analysis
+---
 
-The original `15_4_house_price_prediction.ipynb` and `houseprediction.csv` remain at repository root. Its fixed `predict_house_price(...)` helper is explicitly labeled as a California block-level educational demonstration and is not used by production inference. The application uses a copy at `data/sample_datasets/housing_sample.csv` as its bundled geographic/block-level demo.
+## Author
+
+**Anjaney Malhotra** - B.Tech Mechanical Engineering, VIT Vellore  
+[GitHub](https://github.com/Anjaney336)
